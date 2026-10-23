@@ -6,6 +6,8 @@ argument-hint: "[stack: react|angular|vue|svelte|next|vanilla] [dir]"
 
 # Bootstrap (target: about 7% of budget, 4 min)
 
+First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time.
+
 Requested stack: `$ARGUMENTS`. If none is given, use what SCOPE.md or the user said. Otherwise default to `react`.
 
 ## 1. Detect before creating
@@ -14,7 +16,11 @@ If `package.json` already exists, **don't scaffold**. Read it, and identify the 
 
 ## 2. Scaffold (only if there's no project)
 
-Use non-interactive commands. Pick the row for the stack:
+**The project root is the session's working directory.** `.sprint/` already lives there, and the clock, git, and dev server all run from it. Scaffolders refuse to write into a non-empty directory, so always do it in two steps:
+1. Scaffold into a temp subdir, `<dir>` = `.scaffold`, using the table below.
+2. Run `rsync -a .scaffold/ ./ && rm -rf .scaffold`, then `npm install`.
+
+Each command below is non-interactive (tested). Pick the row for the stack:
 
 | Stack | Scaffold | Tests |
 |---|---|---|

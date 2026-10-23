@@ -5,6 +5,8 @@ description: Pre-demo quality gate for a time-boxed frontend build - typecheck, 
 
 # Verify (target: about 12% of budget, 7 min)
 
+First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time. Do it again before each major step if the run is long.
+
 From here on, **no new features**. Fix only things that would break or embarrass the demo.
 
 ## 1. Automated gate

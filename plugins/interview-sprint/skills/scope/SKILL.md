@@ -6,6 +6,8 @@ argument-hint: "[problem statement or path]"
 
 # Scope (target: 10% of budget, about 6 min)
 
+First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time. Do it again before each major step if the run is long.
+
 Problem: `$ARGUMENTS`. If this is empty, use the problem already in the conversation. If it's a path, read it first.
 
 ## Steps

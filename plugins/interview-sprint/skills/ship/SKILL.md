@@ -5,6 +5,8 @@ description: Wrap up a time-boxed frontend build for handoff - README with run s
 
 # Ship (final 8% of budget, about 5 min)
 
+First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time. Do it again before each major step if the run is long.
+
 ## 1. README.md
 
 Replace the template README. Keep it to what a reviewer reads in 2 minutes:

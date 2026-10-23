@@ -6,6 +6,8 @@ argument-hint: "[what the AI should do, e.g. 'suggest subtasks for a todo']"
 
 # AI feature (target: about 13% of budget, 8 min)
 
+First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time. Do it again before each major step if the run is long.
+
 Feature: `$ARGUMENTS`. If this is empty, use SCOPE.md's `AI feature` section.
 
 **Precondition:** all MUST slices are done. If not, tell the user, and build the AI feature only if they explicitly say to.

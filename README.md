@@ -10,7 +10,7 @@ A Claude Code plugin marketplace. It currently holds one plugin, **`interview-sp
 /plugin install interview-sprint@agentic-workflow
 ```
 
-Or try it for a single session without installing: `claude --plugin-dir ./plugins/interview-sprint`
+Or try it for a single session without installing: `claude --plugin-dir /Users/saurabhs_500408/personal/projects/agentic-workflow/plugins/interview-sprint`
 
 ## Use
 

@@ -10,7 +10,7 @@ Target: `$ARGUMENTS`. If empty, take the first unchecked slice in `.sprint/SCOPE
 
 ## Loop
 
-1. **Announce.** In one line, say what you're building, the demo line, and the time estimate. Note the clock.
+1. **Clock and announce.** Run `bash <this skill's base directory>/../../scripts/clock.sh status`. Hooks only fire on user messages, so this is how you track time during autonomous runs. Then say in one line what you're building, the demo line, and the time estimate. If the clock says the phase is past CORE, stop and run the timebox cut ladder instead.
 2. **Read only what you need.** That's the files this slice touches, plus the acceptance criteria for it in SCOPE.md.
 3. **Build the thinnest working path first.** Wire data to the UI to the interaction with real behavior. Polish comes after it works.
    - Type the data model, and don't use `any`.
