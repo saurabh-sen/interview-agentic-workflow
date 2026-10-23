@@ -1,0 +1,5 @@
+description = "Add an AI feature via a server-side proxy with streaming/JSON and mock fallback"
+prompt = """
+Activate the `ai-feature` skill from the interview-sprint extension and carry out its steps now. 
+Arguments given with the command: {{args}}
+"""

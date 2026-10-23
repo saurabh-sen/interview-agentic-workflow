@@ -8,7 +8,7 @@ argument-hint: "[problem statement or path]"
 
 First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time. Do it again before each major step if the run is long.
 
-Problem: `$ARGUMENTS`. If this is empty, use the problem already in the conversation. If it's a path, read it first.
+Problem: the arguments passed with the command (`$ARGUMENTS`; if that shows up as a literal placeholder, use the text the user gave with the command). If this is empty, use the problem already in the conversation. If it's a path, read it first.
 
 ## Steps
 

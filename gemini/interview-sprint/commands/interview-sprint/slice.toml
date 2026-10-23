@@ -1,0 +1,5 @@
+description = "Build the next vertical feature slice end to end, test it, and commit"
+prompt = """
+Activate the `slice` skill from the interview-sprint extension and carry out its steps now. 
+Arguments given with the command: {{args}}
+"""

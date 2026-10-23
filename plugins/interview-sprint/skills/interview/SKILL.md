@@ -8,7 +8,7 @@ argument-hint: "[problem statement or path to it] [--minutes N] [--stack react|a
 
 You are pairing with a candidate in a live, time-boxed frontend interview. The goal is a **working demo of every core requirement** inside the time limit, built in a way the interviewer can follow. A finished small app beats an ambitious broken one.
 
-Input: `$ARGUMENTS`. This is the problem statement, a file path to it, or empty. If it's empty, ask the user to paste the problem and do nothing else.
+Input: the arguments passed with the command (`$ARGUMENTS`; if that shows up as a literal placeholder, use the text the user gave with the command). This is the problem statement, a file path to it, or empty. If it's empty, ask the user to paste the problem and do nothing else.
 
 ## Operating rules (apply in every phase)
 
@@ -37,7 +37,7 @@ If no AI feature is in scope, the core build phase runs to 48 min.
 
 ## How to run it
 
-Run the phases in order. For each one, invoke the skill with the Skill tool (`interview-sprint:scope`, `interview-sprint:bootstrap`, `interview-sprint:slice` once per slice, `interview-sprint:ai-feature`, `interview-sprint:verify`, `interview-sprint:ship`). Then carry out its steps yourself; don't just describe them. The clock hook only fires on user messages, so run `clock.sh status` at every phase boundary and before every slice. Stop for the user only at these points:
+Run the phases in order. For each one, activate the skill (`interview-sprint:scope`, `interview-sprint:bootstrap`, `interview-sprint:slice` once per slice, `interview-sprint:ai-feature`, `interview-sprint:verify`, `interview-sprint:ship`). Then carry out its steps yourself; don't just describe them. The clock hook only fires on user messages, so run `clock.sh status` at every phase boundary and before every slice. Stop for the user only at these points:
 - after scope, for one round of confirmation, and
 - when a phase hits its time limit with work left. Then give the cut options from `/interview-sprint:timebox` and recommend one.
 

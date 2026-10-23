@@ -1,0 +1,5 @@
+description = "Write the README, demo script, and final commit"
+prompt = """
+Activate the `ship` skill from the interview-sprint extension and carry out its steps now. 
+Arguments given with the command: {{args}}
+"""

@@ -8,7 +8,7 @@ argument-hint: "[stack: react|angular|vue|svelte|next|vanilla] [dir]"
 
 First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time.
 
-Requested stack: `$ARGUMENTS`. If none is given, use what SCOPE.md or the user said. Otherwise default to `react`.
+Requested stack: the arguments passed with the command (`$ARGUMENTS`; if that shows up as a literal placeholder, use the text the user gave with the command). If none is given, use what SCOPE.md or the user said. Otherwise default to `react`.
 
 ## 1. Detect before creating
 
@@ -49,7 +49,7 @@ Make sure `package.json` has these scripts, so later skills don't have to guess:
 3. Add `src/components/states` (or the framework's equivalent) with **Loading**, **Error (with retry)**, and **Empty** components. Every async view will use them.
 4. Write one smoke test: the shell renders its heading.
 5. Run `npm test` and `npm run build`. Both must pass.
-6. Start the dev server in the background, as a background Bash task. Note the URL and tell the user to open it.
+6. Start the dev server in the background, as a background shell process. Note the URL and tell the user to open it.
 
 ## 5. Commit
 

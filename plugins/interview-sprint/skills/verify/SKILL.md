@@ -17,11 +17,11 @@ Fix failures in priority order: build, then type errors, then failing tests, the
 
 ## 2. Requirements check (independent)
 
-Launch the `acceptance-checker` agent from this plugin, **one instance only**. Give it the project path and `.sprint/SCOPE.md`. It reports PASS, FAIL, or PARTIAL per acceptance criterion, with evidence. While it runs, continue with step 3. When its report arrives, fix FAILs in MUST items first.
+Delegate to the `acceptance-checker` subagent that ships with this plugin/extension, **one instance only**. Give it the project path and `.sprint/SCOPE.md`. It reports PASS, FAIL, or PARTIAL per acceptance criterion, with evidence. While it runs, continue with step 3. When its report arrives, fix FAILs in MUST items first.
 
 ## 3. Browser smoke test
 
-If browser tools are available (claude-in-chrome or chrome-devtools), use them. Otherwise give the user a 5-step manual checklist.
+If browser tools are available (claude-in-chrome or chrome-devtools in Claude Code; `browser_agent` in Gemini CLI, if enabled), use them. Otherwise give the user a 5-step manual checklist.
 - Load the dev URL. **Check the console has no errors.**
 - Walk each MUST's demo line from SCOPE.md.
 - Check the edge states: empty data, a slow or failed network (if there's an API), very long text, and rapid repeat clicks.

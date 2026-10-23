@@ -4,7 +4,8 @@
 #   clock.sh start [minutes]   start the clock (default 60)
 #   clock.sh ai yes|no         record whether an AI feature is in scope (changes the schedule)
 #   clock.sh status            human-readable elapsed / phase / what to do next
-#   clock.sh hook              JSON for a UserPromptSubmit hook (silent when no sprint is running)
+#   clock.sh hook [event]      JSON for a prompt hook (silent when no sprint is running).
+#                              event: UserPromptSubmit (Claude Code, default) | BeforeAgent (Gemini CLI)
 set -euo pipefail
 
 DIR="${SPRINT_DIR:-.sprint}"
@@ -62,7 +63,7 @@ fi
 if [ "$cmd" = "hook" ]; then
   # Escape for JSON (quotes and backslashes only; message has no newlines).
   esc=$(printf '%s' "$msg" | sed 's/\\/\\\\/g; s/"/\\"/g')
-  printf '{"hookSpecificOutput":{"hookEventName":"UserPromptSubmit","additionalContext":"%s"}}\n' "$esc"
+  printf '{"hookSpecificOutput":{"hookEventName":"%s","additionalContext":"%s"}}\n' "${2:-UserPromptSubmit}" "$esc"
 else
   echo "$msg"
 fi

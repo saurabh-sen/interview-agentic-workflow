@@ -1,0 +1,5 @@
+{
+  "name": "interview-sprint",
+  "version": "0.1.0",
+  "description": "Time-boxed agentic workflow for 1-hour frontend interview problems: scope, bootstrap, vertical-slice build, optional AI feature, verify, ship."
+}

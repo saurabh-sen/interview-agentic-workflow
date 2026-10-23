@@ -1,6 +1,6 @@
 # agentic-workflow
 
-A Claude Code plugin marketplace. It currently holds one plugin, **`interview-sprint`**: a time-boxed agentic workflow for solving a frontend interview or machine-coding problem end to end in about 1 hour. That covers scoping, a running app, the core requirements working and tested, an AI feature if one is asked for, verification, and a README. It works with any framework.
+A Claude Code plugin marketplace (with a matching Gemini CLI extension). It currently holds one plugin, **`interview-sprint`**: a time-boxed agentic workflow for solving a frontend interview or machine-coding problem end to end in about 1 hour. That covers scoping, a running app, the core requirements working and tested, an AI feature if one is asked for, verification, and a README. It works with any framework.
 
 ## Install
 
@@ -11,6 +11,26 @@ A Claude Code plugin marketplace. It currently holds one plugin, **`interview-sp
 ```
 
 Or try it for a single session without installing: `claude --plugin-dir /Users/saurabhs_500408/personal/projects/agentic-workflow/plugins/interview-sprint`
+
+### Gemini CLI
+
+The same workflow ships as a Gemini CLI extension in `gemini/interview-sprint/`. The commands have the same names (`/interview-sprint:scope`, etc.).
+
+```bash
+gemini extensions link /Users/saurabhs_500408/personal/projects/agentic-workflow/gemini/interview-sprint   # live link: edits show up after a CLI restart
+# or: gemini extensions install <path>   # makes a copy, so re-run `gemini extensions update interview-sprint` after edits
+```
+
+| Piece | Claude Code plugin | Gemini CLI extension |
+|---|---|---|
+| Skills + `clock.sh` | `plugins/interview-sprint/skills`, `scripts` (source of truth) | Copied in by `scripts/sync-gemini.sh` |
+| Slash commands | The skills themselves | `commands/interview-sprint/*.toml`, thin wrappers that activate the skill |
+| Clock hook | `UserPromptSubmit` | `BeforeAgent` |
+| Verifier | `agents/acceptance-checker.md` (Claude tools) | Same prompt with Gemini tool names |
+
+**After you edit a skill or `clock.sh`, run `scripts/sync-gemini.sh` and commit both copies.**
+
+To enable the browser smoke test in Gemini, set `agents.overrides.browser_agent.enabled: true` in `~/.gemini/settings.json`.
 
 ## Use
 

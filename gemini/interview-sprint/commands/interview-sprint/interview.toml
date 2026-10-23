@@ -1,0 +1,5 @@
+description = "Run the full 1-hour frontend interview sprint on a problem statement"
+prompt = """
+Activate the `interview` skill from the interview-sprint extension and carry out its steps now. Start the sprint clock first, as the skill says.
+Arguments given with the command: {{args}}
+"""

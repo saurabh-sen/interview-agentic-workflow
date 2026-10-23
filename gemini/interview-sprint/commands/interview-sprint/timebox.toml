@@ -1,0 +1,5 @@
+description = "Sprint clock status and what to cut (args: start N | ai yes|no)"
+prompt = """
+Activate the `timebox` skill from the interview-sprint extension and carry out its steps now. 
+Arguments given with the command: {{args}}
+"""

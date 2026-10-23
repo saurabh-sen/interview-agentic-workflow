@@ -1,0 +1,5 @@
+description = "Turn the problem into .sprint/SCOPE.md: MUST/SHOULD/WON'T, slice plan, acceptance criteria"
+prompt = """
+Activate the `scope` skill from the interview-sprint extension and carry out its steps now. 
+Arguments given with the command: {{args}}
+"""

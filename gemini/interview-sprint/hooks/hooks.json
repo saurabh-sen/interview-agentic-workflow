@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "BeforeAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "sprint-clock",
+            "description": "Injects elapsed time, current phase, and next step while an interview sprint is running",
+            "command": "SPRINT_DIR=\"${workspacePath}/.sprint\" bash \"${extensionPath}/scripts/clock.sh\" hook BeforeAgent"
+          }
+        ]
+      }
+    ]
+  }
+}

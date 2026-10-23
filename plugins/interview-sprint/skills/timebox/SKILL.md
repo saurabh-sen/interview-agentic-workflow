@@ -6,7 +6,7 @@ argument-hint: "[start N | ai yes|no]  (optional: start the clock or set AI scop
 
 # Timebox
 
-If `$ARGUMENTS` starts with `start` or `ai`, run `bash <this skill's base directory>/../../scripts/clock.sh $ARGUMENTS` and report the output. Then stop.
+Look at the arguments passed with the command (`$ARGUMENTS`; if that shows up as a literal placeholder, use the text the user gave with the command). If they start with `start` or `ai`, run `bash <this skill's base directory>/../../scripts/clock.sh <those arguments>` and report the output. Then stop.
 
 Otherwise:
 

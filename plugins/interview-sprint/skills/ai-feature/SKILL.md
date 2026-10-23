@@ -8,7 +8,7 @@ argument-hint: "[what the AI should do, e.g. 'suggest subtasks for a todo']"
 
 First, run `bash <this skill's base directory>/../../scripts/clock.sh status` and say the time. Do it again before each major step if the run is long.
 
-Feature: `$ARGUMENTS`. If this is empty, use SCOPE.md's `AI feature` section.
+Feature: the arguments passed with the command (`$ARGUMENTS`; if that shows up as a literal placeholder, use the text the user gave with the command). If this is empty, use SCOPE.md's `AI feature` section.
 
 **Precondition:** all MUST slices are done. If not, tell the user, and build the AI feature only if they explicitly say to.
 
@@ -37,7 +37,7 @@ Then:
 2. Create `.env.example` containing `ANTHROPIC_API_KEY=`, and make sure `.env` is in `.gitignore`.
 3. If there's no key, it runs in **mock mode** automatically. Mock JSON is generated from the schema, so the UI still renders.
 
-Model and API details: the reference uses `claude-opus-5-5` at `effort: "low"` for speed, with server-side refusal fallbacks. If you change the model or request shape, load the `claude-api` skill first; don't rely on memory.
+Model and API details: the reference uses `claude-opus-5-5` at `effort: "low"` for speed, with server-side refusal fallbacks. If you change the model or request shape, load the `claude-api` skill first if it's available, otherwise check the current Anthropic docs. Don't rely on memory.
 
 ## 3. Build the feature as a slice
 

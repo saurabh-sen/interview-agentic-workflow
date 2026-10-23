@@ -6,7 +6,7 @@ argument-hint: "[slice name from SCOPE.md, or empty for the next unbuilt one]"
 
 # Slice (one MUST at a time)
 
-Target: `$ARGUMENTS`. If empty, take the first unchecked slice in `.sprint/SCOPE.md`'s slice plan.
+Target: the arguments passed with the command (`$ARGUMENTS`; if that shows up as a literal placeholder, use the text the user gave with the command). If empty, take the first unchecked slice in `.sprint/SCOPE.md`'s slice plan.
 
 ## Loop
 
