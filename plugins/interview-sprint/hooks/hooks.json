@@ -1,0 +1,15 @@
+{
+  "description": "Injects the interview sprint clock (elapsed time, current phase, next step) into every prompt while a sprint is running",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/clock.sh\" hook"
+          }
+        ]
+      }
+    ]
+  }
+}
